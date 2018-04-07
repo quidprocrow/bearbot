@@ -1,17 +1,22 @@
-//console.log("Hello World!");
+// Require twitter node package.
 const TwitterPackage = require('twitter')
+// Require secret keys associated with particular twitter app.
 const secret = require('./secret')
+// Require tarot reading function.
+const tarot = require('./tarot')
 
-const rando = function (arr) {
-  return arr[Math.floor(Math.random() * arr.length)]
+const rando = function () {
+  return Math.floor(Math.random() * 21)
 }
+
 
 const randomEmoji = () => {
   const emoji = ['👍', '👌', '❤️','☕️','🍕','✨','🦄']
   return `${rando(emoji)}`
 }
-const Twitter = new TwitterPackage(secret.secret)
-Twitter.post('statuses/update', {status: `${randomEmoji()}`},  function(error, tweet, response){
+
+const Twitter = new TwitterPackage(secret.keys)
+Twitter.post('statuses/update', {status: `${tarot.reading(rando())}`},  function(error, tweet, response){
  if(error){
    console.log(error)
  }
