@@ -1,6 +1,5 @@
 
 const reading = function (num) {
-  console.log(num)
   let card = ''
   switch (num) {
     case 0:
@@ -10,7 +9,7 @@ const reading = function (num) {
       card = '✨ THE MAGICIAN'
     break
     case 2:
-      card = '👩‍🎓 THE HIGH PREISTESS'
+      card = '👩‍🎓 THE HIGH PRIESTESS'
     break
     case 3:
       card = '🤰 THE EMPRESS'
