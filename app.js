@@ -2,13 +2,20 @@
 // Require twitter node package.
 const TwitterPackage = require('twitter')
 // Require secret keys associated with particular twitter app.
-const secret = require('./secret')
+// const secret = require('./secret')
 // Require tarot reading function.
 const tarot = require('./tarot')
 // Require unique random number generator.
 const randomizer = require('./randomizer')
 
-const Twitter = new TwitterPackage(secret.keys)
+const keys = {
+	consumer_key: process.env.CONSUMER_KEY,
+	consumer_secret: process.env.CONSUMER_SECRET,
+	access_token_key: process.env.ACCESS_TOKEN_KEY,
+	access_token_secret: process.env.ACCESS_TOKEN_SECRET
+}
+
+const Twitter = new TwitterPackage(keys)
 
 Twitter.stream('statuses/filter', {track: '@abearofbadnews'}, function(stream) {
   stream.on('data', function(tweet) {
