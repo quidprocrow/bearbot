@@ -1,0 +1,24 @@
+{
+  "name": "bearbot",
+  "version": "1.0.0",
+  "description": "A simple twitterbot that, when mentioned by other twitter users, generates a random tarot reading with corresponding emojis and apologizes for the user's fate. Hosted on Heroku.",
+  "main": "app.js",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quidprocrow/bearbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quidprocrow/bearbot/issues"
+  },
+  "homepage": "https://github.com/quidprocrow/bearbot#readme"
+}
